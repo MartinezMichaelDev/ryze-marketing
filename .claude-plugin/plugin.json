@@ -9,6 +9,9 @@
   },
   "homepage": "https://www.get-ryze.ai",
   "privacyPolicyUrl": "https://www.get-ryze.ai/privacy",
+  "termsOfServiceUrl": "https://www.get-ryze.ai/terms-of-use",
+  "supportUrl": "https://help.get-ryze.ai/",
+  "documentationUrl": "https://www.get-ryze.ai/how-to-connect-claude-to-google-meta-ads-mcp",
   "repository": "https://github.com/MartinezMichaelDev/ryze-marketing",
   "license": "MIT",
   "keywords": [
