@@ -1,0 +1,31 @@
+{
+  "name": "ryze-marketing",
+  "displayName": "Ryze AI Marketing Skills",
+  "description": "Marketing skills for Claude from Ryze AI: Google Ads health checks, search term cleanup, keyword plans, budget pacing, recommendation triage and AI traffic reports. Bundles the Ryze MCP connector (connector.get-ryze.ai) so Claude works from your live Google Ads and GA4 data after an OAuth sign-in. Skills only: no hooks, no scripts, no telemetry. Every account change needs your approval first.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ryze AI",
+    "url": "https://www.get-ryze.ai"
+  },
+  "homepage": "https://www.get-ryze.ai",
+  "repository": "https://github.com/MartinezMichaelDev/ryze-marketing",
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "google-ads",
+    "ppc",
+    "paid-media",
+    "keyword-research",
+    "ga4",
+    "analytics",
+    "ai-visibility",
+    "geo"
+  ],
+  "skills": "./skills",
+  "mcpServers": {
+    "ryze": {
+      "type": "http",
+      "url": "https://connector.get-ryze.ai/mcp"
+    }
+  }
+}
