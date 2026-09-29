@@ -15,8 +15,8 @@ Review the user's Google Ads account using their own data through the Ryze conne
 
 ## Workflow
 
-1. **Find the account.** Call `google_ads__listAccessibleCustomers`. If a manager account is returned, call `google_ads__getAccountHierarchy` to list the client accounts. If more than one account is possible, ask the user which one to review.
-2. **Get the overview.** Call `google_ads__getAccountSummary` for the last 30 days. Note spend, clicks, conversions, cost per conversion and conversion value.
+1. **Find the account.** Call `google_ads__listAccessibleCustomers`. If a manager account is returned, call `google_ads__getAccountHierarchy` to list the client accounts. If more than one account is possible, ask the user which one to review. When the chosen account sits under a manager account, pass the manager's ID as the login customer ID on every later call.
+2. **Get the overview.** Call `google_ads__getAccountSummary` for the last 30 days. The tool needs an exact start date and end date, so work them out from today's date. Note spend, clicks, conversions, cost per conversion and conversion value.
 3. **Check conversion tracking.** Call `google_ads__listConversionActions`. Flag these problems:
    - No conversion action is enabled.
    - More than one action counts the same event as a primary conversion, which double counts results.

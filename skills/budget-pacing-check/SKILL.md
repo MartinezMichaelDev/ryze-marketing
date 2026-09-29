@@ -14,7 +14,7 @@ Show whether spend is on track for the month and which campaigns need a budget c
 
 ## Workflow
 
-1. **Pick the account.** Call `google_ads__listAccessibleCustomers`. Ask which account to use if there is more than one.
+1. **Pick the account.** Call `google_ads__listAccessibleCustomers`. Ask which account to use if there is more than one. If the account sits under a manager account, call `google_ads__getAccountHierarchy` and pass the manager's ID as the login customer ID on every later call.
 2. **Pull spend and budgets.** Call `google_ads__runRawGaql` with:
 
    ```

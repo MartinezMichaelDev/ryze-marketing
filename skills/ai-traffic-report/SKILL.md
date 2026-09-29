@@ -11,11 +11,12 @@ Show the user how much of their traffic comes from AI assistants, where it lands
 
 - This skill reads data only.
 - It needs Google Analytics 4 connected in the Ryze workspace.
-- Default to the last 90 days. Use another window if the user asks.
+- Default to the last 90 days. Use another window if the user asks. The tools need exact start and end dates.
+- The tools need the Google Analytics property ID. Use the workspace default, and ask the user when there is more than one property.
 
 ## Workflow
 
-1. **Traffic by assistant.** Call `google_analytics__getAiTrafficByEngine`. Record sessions, engaged sessions and conversions for each assistant.
+1. **Traffic by assistant.** Call `google_analytics__getAiTrafficByEngine`. This tool also needs a prior period to compare against, so use the same number of days immediately before the chosen window. Record sessions, engaged sessions and conversions for each assistant.
 2. **Trend over time.** Call `google_analytics__getAiTrafficDaily`. Group the days into weeks and compare the most recent four weeks with the four weeks before.
 3. **Landing pages.** Call `google_analytics__getAiLandingPages`. List the pages that receive the most AI traffic.
 4. **Referral detail.** Call `google_analytics__getAIReferrals` to see the referring sources behind the totals.

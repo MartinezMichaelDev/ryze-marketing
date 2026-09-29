@@ -19,9 +19,9 @@ This skill reads planning data only. It does not create campaigns or keywords.
 
 ## Workflow
 
-1. **Pick the account.** Call `google_ads__listAccessibleCustomers`. Keyword planning needs an account to run under. Ask which one if there are several.
-2. **Generate ideas.** Call `google_ads__generateKeywordIdeas` with the seeds, or the page address, plus the country and language. Ask for a few hundred ideas.
-3. **Get the history.** Call `google_ads__generateKeywordHistoricalMetrics` for the shortlist, so each keyword has average monthly searches, competition level and the low and high top of page bid.
+1. **Pick the account.** Call `google_ads__listAccessibleCustomers`. Keyword planning needs an account to run under. Ask which one if there are several. If the account sits under a manager account, call `google_ads__getAccountHierarchy` and pass the manager's ID as the login customer ID on every later call.
+2. **Generate ideas.** Call `google_ads__generateKeywordIdeas` with the seeds, or the page address, plus the country and language. The tool takes Google's location and language codes, not plain names. For example, the United States is `geoTargetConstants/2840` and English is `languageConstants/1000`. Set the network to Google Search. Ask for a few hundred ideas.
+3. **Get the history.** Call `google_ads__generateKeywordHistoricalMetrics` for the shortlist, with the same location, language and network codes, so each keyword has average monthly searches, competition level and the low and high top of page bid.
 4. **Filter.** Remove keywords that are off topic, that name other brands, or that have no measurable volume. Keep a separate short list of low volume keywords that match the product exactly.
 5. **Group by intent.** Build ad group sized clusters of 5 to 15 keywords that share one meaning. Label each cluster with its intent: ready to buy, comparing options, or learning.
 6. **Suggest match types and negatives.** Recommend exact or phrase match for ready to buy clusters. List obvious negatives found in the ideas, such as "free", "jobs" or "definition", when they do not fit the offer.

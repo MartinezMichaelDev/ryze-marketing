@@ -15,9 +15,9 @@ Google's recommendations mix useful fixes with suggestions that mainly raise spe
 
 ## Workflow
 
-1. **Pick the account.** Call `google_ads__listAccessibleCustomers`. Ask which account to use if there is more than one.
+1. **Pick the account.** Call `google_ads__listAccessibleCustomers`. Ask which account to use if there is more than one. If the account sits under a manager account, call `google_ads__getAccountHierarchy` and pass the manager's ID as the login customer ID on every later call.
 2. **List the recommendations.** Call `google_ads__listRecommendations`. Record each one's type, the campaign it applies to, and the impact Google states.
-3. **Get context.** Call `google_ads__getAccountSummary` for the last 30 days, so each recommendation can be judged against real spend and cost per conversion.
+3. **Get context.** Call `google_ads__getAccountSummary` for the last 30 days, using an exact start date and end date, so each recommendation can be judged against real spend and cost per conversion.
 4. **Sort into three groups.**
    - **Apply:** fixes with little downside, such as adding missing assets, fixing disapproved ads, fixing conversion tracking, or removing conflicting negative keywords.
    - **Discuss:** changes that can help but cost money or control, such as raising budgets, switching bid strategy, adding broad match keywords, or turning on automatic assets.
