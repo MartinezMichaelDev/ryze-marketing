@@ -28,7 +28,7 @@ Find the search terms that cost money and bring nothing back, then turn them int
    LIMIT 1000
    ```
 
-   Use 60 or 90 days instead if the account has low volume. Tell the user which window you used.
+   If the account has low volume, use a 60 or 90 day window instead. There is no preset for those, so replace the date condition with exact dates, for example `segments.date BETWEEN '2026-07-01' AND '2026-09-28'`. Tell the user which window you used.
 3. **Set the waste threshold.** Work out the account's average cost per conversion from step 2. Treat a term as wasteful when it has zero conversions and its spend is at least that average. For accounts with no conversions at all, stop and tell the user that tracking must be fixed first.
 4. **Group by theme.** Sort the wasteful terms into themes, such as competitor names, job seekers, free or cheap, wrong location, wrong product, and questions with no buying intent.
 5. **Protect good terms.** Remove any candidate that matches a keyword the account is bidding on, or that converted in a longer window. When unsure, keep the term and mark it "review".
